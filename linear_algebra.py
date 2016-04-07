@@ -33,11 +33,19 @@ def vector_sub(vec_1, vec_2):
 def vector_sum(*args):
 
     lengths = [len(x) for x in args]
-    return if x == y for x, y in lengths
+    return [x == y for x, y in lengths]
 
-    length = [len(i) for i args]
-    if max(length) != min(length):
-        raise ShapeError
+    #different way to solve above issue
+    # length = [len(i) for i args]
+    # if max(length) != min(length):
+    #     raise ShapeError
+
+    # return [sum(a) for a in zip(*args)]
 
 
-    return [sum(a) for a in zip(*args)]
+def dot(vec_1, vec_2):
+    return sum([vec_1[i] * vec_2[i] for i in range(len(vec_1))])
+    #return sum([a * b for a, b in zip(vector1, vector2)])
+
+def vector_mean(*args):
+    return[x/len(args) for x in vector_sum(*args)]
